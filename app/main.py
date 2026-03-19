@@ -82,12 +82,15 @@ def View_Article_Titles():
             title = article.get('title', 'No Title')
             print(f"{i}. {title}")
 
-def Delete_Article(Article_file):
+def Delete_Article():
     if not os.path.exists(Article_file):
         print("Not Article Found!!")
         return
     os.remove(Article_file)
     print("Article Deleted Successfully!!")
+
+def Exit():
+    print("Exiting the Application. Goodbye!")
 
 def main():
     print("=====Welcome TO Console Based Newsd Application System=====")
@@ -105,7 +108,11 @@ def main():
     elif choice == 'c':
         View_Article_Titles()
     elif choice == 'd':
-        print("Exiting the Application. Goodbye!")
+        Delete_Article()
+    elif choice == 'e':
+        Exit()
+    else:
+        print("Invalid Choice!! Please Try Again!!")
 
 main()
 
